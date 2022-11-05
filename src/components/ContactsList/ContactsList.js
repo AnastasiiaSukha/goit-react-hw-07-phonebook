@@ -4,8 +4,8 @@ import { List, DeleteButton} from "./ContactsList.styled";
 
 const ContactsList = ({ contacts, onDeleteContact}) => {
        return <List>
-        {contacts.map(({ name, id, number}) => (
-            <li key={id}>{name}: {number}
+        {contacts.map(({ name, id, phone}) => (
+            <li key={id}>{name}: {phone}
          <DeleteButton
           type="button"
           onClick={()=>onDeleteContact(id)}
@@ -23,7 +23,7 @@ ContactsList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     })
   ).isRequired,
   onDeleteContact: PropTypes.func,
